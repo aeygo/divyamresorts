@@ -31,7 +31,7 @@
     @media(max-width:360px){.hero h1{font-size:49px}.fields{gap:10px 8px}.form-card{padding-inline:16px}.story h2{font-size:37px}.hero-meta{font-size:6px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
   
-    #form-status{display:none;margin-top:14px}.field input:invalid:not(:focus):not(:placeholder-shown){border-color:#bd7667}
+    #form-status{display:none;margin-top:14px}.field input:invalid:not(:focus):not(:placeholder-shown):not([type="date"]){border-color:#bd7667}
 
     /* Balanced type scale and Divyam brand finish */
     .header{background:#173423;border-bottom:1px solid #c9aa54;box-shadow:0 2px 10px #10251a1a}
@@ -255,6 +255,57 @@
     @media(max-width:720px){.nav .nav-button{padding:12px 16px;border-color:#218047}}
     .room-book{background:#218047;border-radius:7px}
     .room-book:hover{background:#176b39}
+
+    /* Mobile polish: compact hero, readable type, 16px inputs (stops iOS zoom) */
+    .field input:invalid:not(:focus):not(:placeholder-shown):not([type="date"]){border-color:#bd7667}
+    @media(max-width:720px){
+      .header{height:60px}
+      .header .brand-mark{width:112px;height:52px}
+      .nav{top:59px}
+      .hero{padding:78px 16px 28px;gap:16px}
+      .hero-meta{display:none}
+      .hero h1{font-size:clamp(34px,10vw,42px);line-height:1.05;white-space:normal;letter-spacing:-.03em}
+      .hero h1 .mobile-title-break{display:inline}
+      .hero h1 .mobile-title-break+span{margin-left:0}
+      .hero-lead{font-size:14px;line-height:1.55;max-width:none;margin:10px 0 0}
+      .form-card{padding:16px 14px 12px}
+      .form-top{margin-bottom:10px}
+      .form-top .eyebrow{font-size:10px;margin-bottom:4px}
+      .form-top h2{font-size:24px;margin-bottom:3px}
+      .form-top p:last-child{font-size:12px;line-height:1.45}
+      .fields{gap:9px 8px}
+      .field{font-size:11px;gap:4px}
+      .field input,.field select{height:42px;font-size:16px;padding-inline:10px}
+      .check{font-size:11px;line-height:1.45;margin:10px 0}
+      .submit{height:46px;font-size:12px}
+      .form-foot{display:none}
+      .form-call{font-size:12px;margin-top:9px}
+      .confidence-bar{padding-block:10px}
+      .confidence-bar strong{font-size:11px}
+      .confidence-bar span{font-size:10px}
+      .rooms{padding-block:8px 56px}
+      .section-heading h2{font-size:34px}
+      .section-heading .simple-link{font-size:11px;margin-top:10px}
+      .booking-benefits span,.booking-benefits span:nth-child(n+4){font-size:11px;padding:7px 10px}
+      .eyebrow{font-size:10px}
+    }
+
+    /* Direct-booking benefits: single-line scrolling ticker (static wrapped line without JS or with reduced motion) */
+    .rooms .booking-benefits{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;margin:0 0 22px;padding:10px 0;border:0;background:none}
+    .rooms .booking-benefits>span:nth-child(n),.benefits-track>span{display:inline-flex;align-items:center;gap:7px;padding:0;border:0;font-size:13px;line-height:1.4;white-space:nowrap;color:#218047;flex:none}
+    .rooms .booking-benefits.is-marquee{display:block;overflow:hidden;padding:12px 0;border-block:1px solid var(--line);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+    .benefits-track{display:flex;width:max-content;animation:benefits-scroll 26s linear infinite;will-change:transform}
+    .rooms .booking-benefits .benefits-track>span:nth-child(n){display:inline-flex;align-items:center;gap:7px;margin:0 44px 0 0;padding:0;border:0;min-height:0;font-size:14px;line-height:1.4;white-space:nowrap;color:#218047}
+    .rooms .booking-benefits .benefits-track>span:nth-child(n) b{font-weight:600;color:#485349}
+    .rooms .booking-benefits .benefits-track>span::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);margin-left:44px}
+    .booking-benefits.is-marquee:hover .benefits-track{animation-play-state:paused}
+    @keyframes benefits-scroll{to{transform:translateX(-50%)}}
+    /* Larger, easier-to-tap Enquire buttons on room cards */
+    .room-card .room-book,.room-card .room-book:nth-child(n){font-size:13px;letter-spacing:.06em;padding:13px 22px;min-height:46px;border-radius:8px;gap:10px}
+    .room-card .room-book span{font-size:16px}
+    .room-card .room-price strong{font-size:20px}
+    @media(max-width:1000px){.room-card .room-book{width:auto}}
+    @media(max-width:720px){.room-card .room-book,.room-card .room-book:nth-child(n){font-size:13px;padding:13px 20px;min-height:46px}.room-card .room-price strong{font-size:19px}}
   </style>
 </head>
 <body>
@@ -294,7 +345,7 @@
 
 
     <section class="rooms wrap" id="rooms">
-      <div class="section-heading"><div><p class="eyebrow">DIVYAM RESORTS</p><h2>Our Rooms &amp; Suites</h2></div><a class="simple-link" href="#enquire">Ask about availability <span>↗</span></a></div>
+      <div class="section-heading"><div><h2>Our Rooms &amp; Suites</h2></div></div>
       <div class="booking-benefits" aria-label="Direct booking benefits"><span>✓ <b>Best Rate Guaranteed</b></span><span>✓ <b>Free Cancellation</b></span><span>✓ <b>Complimentary Breakfast</b></span><span>✓ <b>24/7 Concierge</b></span><span>✓ <b>Direct resort support</b></span></div>
       <div class="room-grid" id="room-grid">
         <article class="room-card" data-category="executive"><div class="room-photo"><img src="assets/room-executive.jpg" alt="Executive room at Divyam Resorts with a double bed and seating area" loading="lazy" decoding="async"></div><div class="room-body"><div class="room-head"><h3>Executive Room</h3><span class="room-chip">Executive</span></div><p class="room-description">Relax in a well-appointed 340 sq ft room with a serene pool view, twin beds, and a private balcony — your peaceful escape at Divyam Resorts.</p><div class="room-tags"><span>24-hour front desk</span><span>Air conditioning</span></div><div class="room-facts"><span>Twin bed</span><span>340 sq. ft.</span></div><div class="room-price"><div class="room-price-copy"><del>₹10,000</del><strong>₹6,500</strong><small>per night</small></div><a class="room-book" href="#enquire">Enquire <span>↗</span></a></div></div></article>
@@ -371,6 +422,17 @@
       schedule();
     }
 
+
+    const benefits=document.querySelector('.booking-benefits');
+    if(benefits&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const track=document.createElement('div');
+      track.className='benefits-track';
+      const items=[...benefits.children];
+      items.forEach(item=>track.append(item));
+      items.forEach(item=>{const copy=item.cloneNode(true);copy.setAttribute('aria-hidden','true');track.append(copy)});
+      benefits.append(track);
+      benefits.classList.add('is-marquee');
+    }
 
     const mobileCta=document.querySelector('.mobile-cta');
     const enquiryCard=document.querySelector('#enquire');

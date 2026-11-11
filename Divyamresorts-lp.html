@@ -306,6 +306,86 @@
     .room-card .room-price strong{font-size:20px}
     @media(max-width:1000px){.room-card .room-book{width:auto}}
     @media(max-width:720px){.room-card .room-book,.room-card .room-book:nth-child(n){font-size:13px;padding:13px 20px;min-height:46px}.room-card .room-price strong{font-size:19px}}
+    /* Footer social icons */
+    .footer-social{grid-column:1/-1;display:flex;gap:12px;align-items:center}
+    .footer-social a{display:block;width:40px;height:40px;border-radius:10px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+    .footer-social a:hover,.footer-social a:focus-visible{transform:translateY(-2px);box-shadow:0 0 0 2px var(--gold)}
+    .footer-social a:focus-visible{outline:none}
+    .footer-social img{width:100%;height:100%;object-fit:contain}
+    @media(max-width:720px){.footer-social{justify-content:center;padding-top:4px}}
+    /* Google rating badge */
+    .google-rating{display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;max-width:100%;margin:0 auto 24px;padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:14px;color:#485349;transition:box-shadow .2s,transform .2s}
+    .google-rating:hover{box-shadow:0 4px 14px #13271e1f;transform:translateY(-1px)}
+    .google-rating:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+    .google-stars{color:#f4b400;font-size:17px;letter-spacing:2px;line-height:1}
+    .google-rating-text b{font-weight:700;color:#243027}
+    @media(max-width:720px){.google-rating{font-size:13px;padding:8px 15px;margin-bottom:18px}.google-stars{font-size:15px}}
+    /* Site footer */
+    .site-footer{background:var(--deep);color:#d9ddd1;padding:56px max(28px,calc((100vw - var(--wrap))/2)) 0}
+    .site-footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1.3fr;gap:clamp(28px,5vw,72px);padding-bottom:40px}
+    .footer-col h3{font:700 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#e3cc83;margin:0 0 20px}
+    .footer-col ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+    .footer-col a,.footer-col address{font-size:15px;line-height:1.6;color:#d9ddd1;font-style:normal}
+    .footer-col a{transition:color .2s}
+    .footer-col a:hover,.footer-col a:focus-visible{color:#fff}
+    .footer-about p{font-size:15px;line-height:1.7;color:#c2c8bb;max-width:340px;margin:16px 0 22px}
+    .footer-logo{display:inline-block}
+    .footer-logo img{width:170px;height:auto;object-fit:contain}
+    .footer-about .footer-social{grid-column:auto;justify-content:flex-start}
+    .footer-contact-list li{display:grid;gap:2px}
+    .footer-contact-list li>span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8e9a8d}
+    .footer-contact-list a{font-weight:600;color:#fff;word-break:break-word}
+    .footer-contact-list .footer-directions{display:inline-block;margin-top:2px;color:#e3cc83;font-weight:700}
+    .footer-bottom-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid #ffffff1f;padding:18px 0;font-size:13px;color:#a9b1a5}
+    .footer-bottom-bar a{color:#a9b1a5;text-decoration:underline;text-underline-offset:3px}
+    .footer-bottom-bar a:hover{color:#fff}
+    @media(max-width:1000px){.site-footer-inner{grid-template-columns:1fr 1fr}.footer-about{grid-column:1/-1}}
+    @media(max-width:720px){.site-footer{padding:40px 22px 0}.site-footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px;padding-bottom:30px}.footer-about{text-align:center}.footer-about p{margin-inline:auto}.footer-about .footer-social{justify-content:center}.footer-col:last-of-type{grid-column:1/-1}.footer-bottom-bar{justify-content:center;text-align:center;padding-bottom:88px}}
+    /* Compact footer */
+    .site-footer{padding:34px max(28px,calc((100vw - var(--wrap))/2)) 0}
+    .site-footer-inner{grid-template-columns:1.3fr 1.2fr 1.2fr;gap:clamp(24px,4vw,56px);padding-bottom:26px}
+    .footer-col h3{font-size:11px;margin:0 0 14px}
+    .footer-col ul{gap:8px}
+    .footer-col a,.footer-col address{font-size:14px;line-height:1.5}
+    .footer-logo img{width:130px}
+    .footer-about p{font-size:14px;line-height:1.6;margin:10px 0 14px;max-width:300px}
+    .footer-about .footer-social a{width:36px;height:36px;border-radius:9px}
+    .footer-col nav ul,.footer-nav ul{grid-template-columns:1fr 1fr;gap:8px 20px}
+    .footer-contact-list{gap:10px}
+    .footer-contact-list li>span{font-size:10px}
+    .footer-contact-list .footer-directions{margin-top:0}
+    .footer-bottom-bar{padding:14px 0;font-size:13px}
+    .footer-bottom-bar a{color:#e3cc83;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+    .footer-bottom-bar a:hover{color:#fff}
+    @media(max-width:1000px){.site-footer-inner{grid-template-columns:1fr 1fr}.footer-about{grid-column:1/-1}}
+    @media(max-width:720px){.site-footer{padding:28px 20px 0}.site-footer-inner{grid-template-columns:1fr;gap:22px;padding-bottom:20px}.footer-about{display:flex;flex-direction:column;align-items:center;text-align:center}.footer-about p{display:none}.footer-logo{margin-bottom:12px}.footer-col h3{margin-bottom:10px}.footer-nav ul{grid-template-columns:1fr 1fr;gap:8px 16px}.footer-col:last-of-type{grid-column:auto}.footer-bottom-bar{padding:14px 0 84px}}
+    /* Footer contact: label and value on one line */
+    .footer-contact-list{gap:9px}
+    .footer-contact-list li{display:grid;grid-template-columns:64px minmax(0,1fr);align-items:baseline;column-gap:10px}
+    .footer-contact-list li>span{font-size:11px;letter-spacing:.1em}
+    .footer-contact-list address{font-weight:400}
+    .footer-contact-list li:has(.footer-directions){display:block;padding-left:74px}
+    @media(max-width:720px){.footer-contact-list li:has(.footer-directions){padding-left:74px}}
+    /* Floating 3D WhatsApp button */
+    .wa-float{position:fixed;z-index:9;right:22px;bottom:22px;display:flex;flex-direction:column;align-items:flex-end;gap:14px;transition:bottom .2s ease}
+    .wa-button{position:relative;display:block;width:62px;height:62px;border-radius:19px;background:linear-gradient(145deg,#4be885,#16a34a);box-shadow:0 7px 0 #0d6e32,0 16px 24px #0b2a1a59,inset 0 2px 3px #ffffffa6,inset 0 -3px 5px #0d6e3266;transform:perspective(260px) rotateX(10deg);transition:transform .18s ease,box-shadow .18s ease;animation:wa-bob 3.2s ease-in-out infinite}
+    .wa-button img{width:100%;height:100%;border-radius:19px;object-fit:cover;filter:drop-shadow(0 2px 2px #0b2a1a55)}
+    .wa-button::before{content:"";position:absolute;inset:3px 3px 50%;border-radius:16px 16px 40% 40%;background:linear-gradient(#ffffff59,#ffffff00);pointer-events:none}
+    .wa-button::after{content:"";position:absolute;inset:-6px;border-radius:25px;border:2px solid #25d366;opacity:0;animation:wa-ring 2.6s ease-out infinite;pointer-events:none}
+    .wa-button:hover{transform:perspective(260px) rotateX(0) translateY(-3px);box-shadow:0 10px 0 #0d6e32,0 20px 28px #0b2a1a59,inset 0 2px 3px #ffffffa6}
+    .wa-button:active{transform:perspective(260px) rotateX(0) translateY(5px);box-shadow:0 2px 0 #0d6e32,0 6px 10px #0b2a1a4d,inset 0 2px 3px #ffffffa6;animation:none}
+    .wa-button:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
+    .wa-bubble{position:relative;width:min(262px,calc(100vw - 44px));padding:14px 34px 14px 16px;background:#fff;color:var(--ink);border-radius:16px 16px 4px 16px;box-shadow:0 10px 30px #0b2a1a33;display:flex;flex-direction:column;gap:4px;font-size:13px;line-height:1.45;animation:wa-pop .35s ease both}
+    .wa-bubble[hidden]{display:none}
+    .wa-bubble strong{font-size:14px;color:#176b39}
+    .wa-bubble span{color:#586358}
+    .wa-close{position:absolute;top:6px;right:6px;width:26px;height:26px;border:0;border-radius:50%;background:none;color:#7a8277;font-size:20px;line-height:1;cursor:pointer}
+    .wa-close:hover{background:#eef1ee;color:#243027}
+    @keyframes wa-bob{0%,100%{translate:0 0}50%{translate:0 -4px}}
+    @keyframes wa-ring{0%{opacity:.7;transform:scale(.92)}100%{opacity:0;transform:scale(1.3)}}
+    @keyframes wa-pop{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
+    @media(max-width:720px){.wa-float{right:14px;bottom:16px}.wa-float.above-cta{bottom:76px}.wa-button{width:56px;height:56px;border-radius:17px}.wa-button img,.wa-button::before{border-radius:17px}}
+    @media(prefers-reduced-motion:reduce){.wa-button,.wa-button::after,.wa-bubble{animation:none!important}}
   </style>
 </head>
 <body>
@@ -340,13 +420,12 @@
       <div class="hero-meta"><span>30.0730° N&nbsp; 78.3490° E</span><span>NEAR NEELKANTH MAHADEV TEMPLE</span><span>RISHIKESH · INDIA</span></div>
     </section>
 
-    <section class="confidence-bar wrap" aria-label="Stay details"><div><span>01</span><strong>Enquire directly with the resort</strong></div><div><span>02</span><strong>24-hour front desk</strong></div><div><span>03</span><strong>SAVE UPTO 33%</strong></div></section>
-
 
 
     <section class="rooms wrap" id="rooms">
       <div class="section-heading"><div><h2>Our Rooms &amp; Suites</h2></div></div>
-      <div class="booking-benefits" aria-label="Direct booking benefits"><span>✓ <b>Best Rate Guaranteed</b></span><span>✓ <b>Free Cancellation</b></span><span>✓ <b>Complimentary Breakfast</b></span><span>✓ <b>24/7 Concierge</b></span><span>✓ <b>Direct resort support</b></span></div>
+      <div class="booking-benefits" aria-label="Direct booking benefits"><span>✓ <b>Enquire directly with the resort</b></span><span>✓ <b>24-hour front desk</b></span><span>✓ <b>Save up to 33%</b></span><span>✓ <b>Best Rate Guaranteed</b></span><span>✓ <b>Free Cancellation</b></span><span>✓ <b>Complimentary Breakfast</b></span><span>✓ <b>24/7 Concierge</b></span><span>✓ <b>Direct resort support</b></span></div>
+      <a class="google-rating" href="https://www.google.co.in/travel/hotels/entity/CgsIsvHSjKK9yfTqARAB" target="_blank" rel="noopener noreferrer" aria-label="5 star rating on Google, view guest reviews"><span class="google-stars" aria-hidden="true">★★★★★</span><span class="google-rating-text"><b>5 star</b> on Google</span></a>
       <div class="room-grid" id="room-grid">
         <article class="room-card" data-category="executive"><div class="room-photo"><img src="assets/room-executive.jpg" alt="Executive room at Divyam Resorts with a double bed and seating area" loading="lazy" decoding="async"></div><div class="room-body"><div class="room-head"><h3>Executive Room</h3><span class="room-chip">Executive</span></div><p class="room-description">Relax in a well-appointed 340 sq ft room with a serene pool view, twin beds, and a private balcony — your peaceful escape at Divyam Resorts.</p><div class="room-tags"><span>24-hour front desk</span><span>Air conditioning</span></div><div class="room-facts"><span>Twin bed</span><span>340 sq. ft.</span></div><div class="room-price"><div class="room-price-copy"><del>₹10,000</del><strong>₹6,500</strong><small>per night</small></div><a class="room-book" href="#enquire">Enquire <span>↗</span></a></div></div></article>
         <article class="room-card" data-category="executive"><div class="room-photo"><img src="assets/room-executive-twin.jpg" alt="Twin room at Divyam Resorts with mountain-view balcony" loading="lazy" decoding="async"></div><div class="room-body"><div class="room-head"><h3>Executive Twin Bed</h3><span class="room-chip">Executive</span></div><p class="room-description">Embrace the calm of the forest in this 300 sq ft room with twin beds, a private forest-view balcony, and thoughtful comforts.</p><div class="room-tags"><span>24-hour front desk</span><span>Air conditioning</span></div><div class="room-facts"><span>Twin bed</span><span>300 sq. ft.</span></div><div class="room-price"><div class="room-price-copy"><del>₹10,000</del><strong>₹6,500</strong><small>per night</small></div><a class="room-book" href="#enquire">Enquire <span>↗</span></a></div></div></article>
@@ -385,7 +464,46 @@
     <section class="close"><p class="eyebrow">YOUR PLACE IN THE HILLS</p><h2>Maybe this is your sign<br>to <em>get away.</em></h2><a class="button" href="#enquire">Tell us when you’re coming <span>↗</span></a><a class="directions-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Divyam%20Resorts%20Rishikesh&amp;destination_place_id=ChIJ7bg6er8VCTkRsriUIeol6eo" target="_blank" rel="noopener noreferrer">Get directions ↗</a></section>
   </main>
 
-  <footer class="footer"><a class="brand" href="#home" aria-label="Divyam Resorts home"><img class="brand-mark" src="assets/divyam-logo.png" alt="Divyam Resorts, Rishikesh"></a><div class="footer-address"><p>Neelkanth Mandir Road,<br>Gram Kothar, Rishikesh</p></div><div class="footer-contact"><a href="tel:+918449955111" aria-label="Call Divyam Resorts at +91 84499 55111">+91 84499 55111</a><a href="mailto:reservations@divyamresorts.in">reservations@divyamresorts.in</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Divyam%20Resorts%20Rishikesh&amp;destination_place_id=ChIJ7bg6er8VCTkRsriUIeol6eo" target="_blank" rel="noopener noreferrer">Get directions ↗</a></div><div class="footer-bottom"><span>© 2026 DIVYAM RESORTS</span><a href="https://www.divyamresorts.in/privacy-policy" target="_blank" rel="noopener">PRIVACY POLICY</a></div></footer>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-col footer-about">
+        <a class="footer-logo" href="#home" aria-label="Divyam Resorts home"><img src="assets/divyam-logo.png" alt="Divyam Resorts, Rishikesh" width="170" height="80" loading="lazy" decoding="async"></a>
+        <p>A hillside resort near Neelkanth Mahadev, Rishikesh. Valley views, mountain air and a warm welcome.</p>
+        <div class="footer-social" aria-label="Follow and contact Divyam Resorts"><a href="https://www.instagram.com/divyamresorts/" target="_blank" rel="noopener noreferrer" aria-label="Divyam Resorts on Instagram" title="Divyam Resorts on Instagram"><img src="assets/social-instagram.png" alt="" width="40" height="40" loading="lazy" decoding="async"></a><a href="https://www.facebook.com/divyamresorts.in/" target="_blank" rel="noopener noreferrer" aria-label="Divyam Resorts on Facebook" title="Divyam Resorts on Facebook"><img src="assets/social-facebook.png" alt="" width="40" height="40" loading="lazy" decoding="async"></a><a href="https://wa.me/918449955111?text=Hello%20Divyam%20Resorts%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay." target="_blank" rel="noopener noreferrer" aria-label="Chat with Divyam Resorts on WhatsApp" title="Chat with Divyam Resorts on WhatsApp"><img src="assets/social-whatsapp.png" alt="" width="40" height="40" loading="lazy" decoding="async"></a><a href="https://share.google/Iluh6691nXlch0emL" target="_blank" rel="noopener noreferrer" aria-label="Divyam Resorts on Google Maps" title="Divyam Resorts on Google Maps"><img src="assets/social-maps.png" alt="" width="40" height="40" loading="lazy" decoding="async"></a></div>
+      </div>
+      <nav class="footer-col footer-nav" aria-label="Footer navigation">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#rooms">Rooms &amp; Suites</a></li>
+          <li><a href="#weddings">Weddings &amp; Events</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#amenities">Stay &amp; Amenities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#enquire">Plan Your Stay</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-contact-list">
+          <li><span>Call</span><a href="tel:+918449955111" aria-label="Call Divyam Resorts at +91 84499 55111">+91 84499 55111</a></li>
+          <li><span>Email</span><a href="mailto:reservations@divyamresorts.in">reservations@divyamresorts.in</a></li>
+          <li><span>Address</span><address>Neelkanth Mandir Road,<br>Gram Kothar, Rishikesh</address></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      <span>© 2026 Divyam Resorts. All rights reserved.</span>
+      <a href="https://www.divyamresorts.in/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+    </div>
+  </footer>
+  <div class="wa-float" id="wa-float">
+    <div class="wa-bubble" id="wa-bubble" role="status" hidden>
+      <button class="wa-close" type="button" aria-label="Close message">&times;</button>
+      <strong>Need help planning your stay?</strong>
+      <span>Share your requirements and connect with our team on WhatsApp.</span>
+    </div>
+    <a class="wa-button" href="https://wa.me/918449955111?text=Hello%20Divyam%20Resorts%2C%20I%20would%20like%20to%20share%20my%20requirements%20for%20a%20stay.%20Please%20connect%20with%20me." target="_blank" rel="noopener noreferrer" aria-label="Chat with Divyam Resorts on WhatsApp"><img src="assets/social-whatsapp.png" alt="" width="64" height="64" decoding="async"></a>
+  </div>
   <a class="mobile-cta" href="#enquire">Plan your stay <span>↗</span></a>
   <script>
     const navToggle=document.querySelector('.menu-button');
@@ -443,11 +561,32 @@
       const show=mobile&&enquiryCard.getBoundingClientRect().bottom<=0;
       mobileCta.classList.toggle('is-visible',show);
       mobileCta.setAttribute('aria-hidden',String(!show));
+      const floatingWa=document.querySelector('#wa-float');if(floatingWa)floatingWa.classList.toggle('above-cta',show);
     }
     function scheduleMobileCtaUpdate(){if(!ctaFrame)ctaFrame=window.requestAnimationFrame(updateMobileCta)}
     window.addEventListener('scroll',scheduleMobileCtaUpdate,{passive:true});
     window.addEventListener('resize',scheduleMobileCtaUpdate);
     updateMobileCta();
+
+
+    const waFloat=document.querySelector('#wa-float');
+    const waBubble=document.querySelector('#wa-bubble');
+    if(waFloat&&waBubble){
+      const storageKey='divyam_wa_bubble_closed';
+      const wasClosed=()=>{try{return sessionStorage.getItem(storageKey)==='1'}catch(e){return false}};
+      const hideBubble=remember=>{waBubble.hidden=true;if(remember){try{sessionStorage.setItem(storageKey,'1')}catch(e){}}};
+      waBubble.querySelector('.wa-close').addEventListener('click',()=>hideBubble(true));
+      waFloat.querySelector('.wa-button').addEventListener('click',()=>{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'divyam_whatsapp_float_click'});hideBubble(true)});
+      if(!wasClosed()){
+        const isMobile=window.matchMedia('(max-width: 720px)');
+        const showWhenReady=window.setInterval(()=>{
+          if(isMobile.matches&&!waFloat.classList.contains('above-cta'))return;
+          window.clearInterval(showWhenReady);
+          waBubble.hidden=false;
+          window.setTimeout(()=>hideBubble(false),14000);
+        },3500);
+      }
+    }
 
     const form=document.querySelector('#enquiry-form');
     const checkin=form.elements.checkin;

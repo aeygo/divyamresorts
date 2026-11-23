@@ -621,8 +621,27 @@
       ].join('\n');
       const whatsappUrl='https://wa.me/918449955111?text='+encodeURIComponent(message);
       window.dataLayer=window.dataLayer||[];
-      window.dataLayer.push({event:'divyam_whatsapp_enquiry_opened'});
-      window.location.assign(whatsappUrl);
+      let redirected=false;
+      const openWhatsapp=()=>{if(redirected)return;redirected=true;window.location.assign(whatsappUrl)};
+      window.setTimeout(openWhatsapp,1500);
+      window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      const fullName=data.get('name').trim().split(/\s+/);
+      const phoneDigits=data.get('phone').replace(/\D/g,'');
+      window.dataLayer.push({
+        event:'divyam_whatsapp_enquiry_opened',
+        booking:{checkin:data.get('checkin'),checkout:data.get('checkout'),guests:data.get('guests'),room:data.get('room')},
+        enhanced_conversion_data:{
+          phone_number:'+'+(phoneDigits.length===10?'91':'')+phoneDigits,
+          address:{first_name:fullName[0],last_name:fullName.slice(1).join(' ')}
+        },
+        eventCallback:openWhatsapp,
+        eventTimeout:1500
+      });
+      const gtmScript=document.createElement('script');
+      gtmScript.async=true;
+      gtmScript.src='https://www.googletagmanager.com/gtm.js?id=GTM-KKB7KNDP';
+      gtmScript.onerror=openWhatsapp;
+      document.head.appendChild(gtmScript);
     });
   </script>
 </body>
